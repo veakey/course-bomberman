@@ -7,7 +7,10 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 
 const corsSettings = {
-  origin: '*', // Autorise uniquement cet origine
+  origin: [
+    'http://localhost:3000',
+    'https://cyrbhd6crj.eu-west-3.awsapprunner.com/'
+  ], // Autorise uniquement cet origine
   methods: ['GET'], // Méthodes HTTP autorisées
   allowedHeaders: ['Content-Type'], // En-têtes autorisés dans les requêtes
 };
