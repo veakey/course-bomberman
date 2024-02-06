@@ -40,5 +40,7 @@ io.on('connection', (socket) => {
 });
 
 server.listen(3000, () => {
-  console.log('server running at http://localhost:3000');
+  // Find server relevant information such as ip, domain name
+  const address = server.address();
+  console.log(`server running at ${address.address}:${address.port}`);
 });
