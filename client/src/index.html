@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomberman Client</title>
+
+    <div id="landscape">
+        <div id="character"></div>
+    </div>
+
+    <link rel="stylesheet" href="css/game.css">
+
+
+    <script src="js/socket.io.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const socket = io('ws://localhost:3000');
+
+        console.log(socket);
+
+        socket.on('connect', () => {
+          console.log('Connecté au serveur');
+          bouger('gauche');
+        });
+
+        // Écoute des messages du serveur
+        socket.on('message', (data) => {
+          console.log(data);
+        });
+
+        // Fonction pour envoyer un mouvement
+        function bouger(direction) {
+          socket.emit('game', {type: 'bouger', direction});
+        }
+
+        // Fonction pour poser une bombe
+        function poserBombe() {
+          socket.emit('game', {type: 'poserBombe'});
+        }
+
+        // Exemple d'usage
+        bouger('gauche'); // Bouge le joueur à gauche
+        poserBombe(); // Pose une bombe
+
+        // Add event listeners or buttons to trigger these actions
+        document.getElementById('left').addEventListener('click', () => {
+          bouger('gauche');
+        });
+
+        document.getElementById('up').addEventListener('click', () => {
+          bouger('haut');
+        });
+
+        document.getElementById('down').addEventListener('click', () => {
+          bouger('bas');
+        });
+
+        document.getElementById('right').addEventListener('click', () => {
+          bouger('droite');
+        });
+
+        document.addEventListener('keydown', (e) => {
+
+          const stepSize = 5; // Taille du pas de déplacement
+
+          switch (e.key) {
+            case 'ArrowRight':
+              bouger('droite');
+              break;
+            case 'ArrowLeft':
+              bouger('gauche');
+              break;
+            case 'ArrowUp':
+              bouger('haut');
+              break;
+            case 'ArrowDown':
+              bouger('bas');
+              break;
+          }
+        });
+      });
+
+    </script>
+</head>
+<body>
+<div id="controls">
+    <div id="left" class="direction-btn" onclick="">←</div>
+    <div id="up" class="direction-btn">↑</div>
+    <div id="down" class="direction-btn">↓</div>
+    <div id="right" class="direction-btn">→</div>
+</div>
+</body>
+</html>

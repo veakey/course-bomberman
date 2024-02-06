@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomberman Client</title>
+
+    <div id="landscape">
+        <div id="character"></div>
+    </div>
+
+    <link rel="stylesheet" href="css/game.css">
+
+
+    <script src="js/socket.io.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const socket = io('ws://localhost:3000');
+
+        console.log(socket);
+
+        socket.on('connect', () => {
+          console.log('Connecté au serveur');
+          bouger('gauche');
+        });
+
+        // Écoute des messages du serveur
+        socket.on('message', (data) => {
+          console.log(data);
+        });
+
+        // Fonction pour envoyer un mouvement
+        function bouger(direction) {
+          socket.emit('game', { type: 'bouger', direction });
+        }
+
+        // Fonction pour poser une bombe
+        function poserBombe() {
+          socket.emit('game', { type: 'poserBombe' });
+        }
+
+        // Vous pouvez ajouter des écouteurs d'événements ou des boutons pour déclencher ces actions
+
+        const character = document.getElementById('character');
+
+        // Center of the page
+        let positionX = window.innerWidth / 2;
+        let positionY = window.innerHeight / 2;
+
+        socket.on('game', (data) => {
+          console.log(data);
+          switch (data.type) {
+            case 'bouger':
+              switch (data.direction) {
+                case 'gauche':
+                  positionX -= 5;
+                  character.style.transform = 'scaleX(-1)';
+                  break;
+                case 'droite':
+                  positionX += 5;
+                  character.style.transform = 'scaleX(1)';
+                  break;
+                case 'haut':
+                  positionY -= 5;
+                  character.style.transform = 'scaleY(-1)';
+                  break;
+                case 'bas':
+                  positionY += 5;
+                  character.style.transform = 'scaleY(1)';
+                  break;
+              }
+              break;
+            case 'poserBombe':
+              console.log('Bombe posée');
+              break;
+          }
+          character.style.left = `${positionX}px`;
+          character.style.top = `${positionY}px`;
+        });
+      });
+    </script>
+</head>
+<body>
+<h1>Bomberman Client</h1>
+<!-- Ajoutez votre interface utilisateur ici -->
+</body>
+</html>
