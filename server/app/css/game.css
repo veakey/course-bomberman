@@ -7,21 +7,21 @@ body, html {
 
 #landscape {
     position: relative;
-    width: 200vw; /* Plus large que la vue pour permettre le mouvement */
+    width: 200vw; /* Larger than viewport */
     height: 100vh;
-    background-image: url('../assets/images/debug-wallpaper.png'); /* Remplacez par le chemin de votre image de paysage */
-    background-repeat: repeat-x; /* Répéter l'image en x */
+    background-image: url('../assets/images/debug-wallpaper.png');
+    background-repeat: repeat-x;
     transition: transform 0.5s ease;
 }
 
 #character {
     position: absolute;
-    bottom: calc(100vh/2); /* Position depuis le bas de la vue */
-    left: calc(100vw/2); /* Position de départ au milieu */
-    transform: translateX(-50%); /* Centrer le personnage */
-    width: 64px; /* Taille du personnage */
+    bottom: calc(100vh/2);
+    left: calc(100vw/2);
+    transform: translateX(-50%);
+    width: 64px;
     height: 64px;
-    background-image: url('../assets/images/pokeball.png'); /* Remplacez par le chemin de votre image de personnage */
+    background-image: url('../assets/images/pokeball.png');
     background-size: cover;
     transition: transform 0.5s ease;
 }

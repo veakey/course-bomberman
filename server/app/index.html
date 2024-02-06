@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bomberman Client</title>
 
-    <div id="landscape">
-        <div id="character"></div>
-    </div>
-
     <link rel="stylesheet" href="css/game.css">
 
 
@@ -25,22 +21,20 @@
           bouger('gauche');
         });
 
-        // Écoute des messages du serveur
+        // Listen to messages from the server
         socket.on('message', (data) => {
           console.log(data);
         });
 
-        // Fonction pour envoyer un mouvement
+        // Function to send a movement
         function bouger(direction) {
           socket.emit('game', { type: 'bouger', direction });
         }
 
-        // Fonction pour poser une bombe
+        // Function to place a bomb
         function poserBombe() {
           socket.emit('game', { type: 'poserBombe' });
         }
-
-        // Vous pouvez ajouter des écouteurs d'événements ou des boutons pour déclencher ces actions
 
         const character = document.getElementById('character');
 
@@ -82,7 +76,8 @@
     </script>
 </head>
 <body>
-<h1>Bomberman Client</h1>
-<!-- Ajoutez votre interface utilisateur ici -->
+<div id="landscape">
+    <div id="character"></div>
+</div>
 </body>
 </html>

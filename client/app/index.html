@@ -25,22 +25,22 @@
           bouger('gauche');
         });
 
-        // Écoute des messages du serveur
+        // Listen to messages from the server
         socket.on('message', (data) => {
           console.log(data);
         });
 
-        // Fonction pour envoyer un mouvement
+        // Function to send a movement
         function bouger(direction) {
           socket.emit('game', {type: 'bouger', direction});
         }
 
-        // Fonction pour poser une bombe
+        // Function to place a bomb
         function poserBombe() {
           socket.emit('game', {type: 'poserBombe'});
         }
 
-        // Exemple d'usage
+        // Example usage
         bouger('gauche'); // Bouge le joueur à gauche
         poserBombe(); // Pose une bombe
 
@@ -62,9 +62,6 @@
         });
 
         document.addEventListener('keydown', (e) => {
-
-          const stepSize = 5; // Taille du pas de déplacement
-
           switch (e.key) {
             case 'ArrowRight':
               bouger('droite');
@@ -90,6 +87,9 @@
     <div id="up" class="direction-btn">↑</div>
     <div id="down" class="direction-btn">↓</div>
     <div id="right" class="direction-btn">→</div>
+</div>
+<div>
+    Si tout se passe bien tu verra la pokeball bouger en cliquant sur les flèches ou en utilisant ton clavier sur ce <a href="https://cyrbhd6crj.eu-west-3.awsapprunner.com" target="_blank">site</a>
 </div>
 </body>
 </html>

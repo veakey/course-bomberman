@@ -29,5 +29,5 @@ app.use(express.static(join(__dirname, '/app')));
 server.listen(3000, () => {
   // Find server relevant information such as ip, domain name
   const address = server.address();
-  console.log(`server running at ${address.address}:${address.port}`);
+  console.log(`server running at localhost:${address.port}`);
 });
