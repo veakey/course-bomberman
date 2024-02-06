@@ -12,7 +12,7 @@ const corsSettings = {
     'https://cyrbhd6crj.eu-west-3.awsapprunner.com/'
   ], // Autorise uniquement cet origine
   methods: ['GET'], // Méthodes HTTP autorisées
-  allowedHeaders: ['Content-Type'], // En-têtes autorisés dans les requêtes
+  allowedHeaders: ['Content-Type', 'Access-Control-Allow-Origin'], // En-têtes autorisés dans les requêtes
 };
 
 const app = express();
