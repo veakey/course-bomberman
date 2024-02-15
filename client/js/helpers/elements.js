@@ -61,7 +61,7 @@ class GameSlots extends Phaser.Group {
     for (let availableGame of availableGames) {
       let gameBox = new Phaser.Image(this.game, x, yOffset, game_slot_asset)
       let button = new Phaser.Button(this.game, gameBox.width - 100, 12, game_enter_asset, callback.bind(callbackContext, { game_id: availableGame.id }), null, 1, 0, 2, 1);
-      let text = new Phaser.Text(this.game, 30, 25, `Join Game: ${availableGame.name}`, style);
+      let text = new Phaser.Text(this.game, 30, 25, `Rejoindre: ${availableGame.name}`, style);
 
       gameBox.addChild(button);
       gameBox.addChild(text);

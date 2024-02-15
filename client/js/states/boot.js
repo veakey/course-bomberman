@@ -11,7 +11,7 @@ class Boot extends Phaser.State {
       game: this.game,
       x: this.game.world.centerX,
       y: this.game.world.centerY,
-      text: 'Loading...',
+      text: 'Chargement ...',
       style: {
         font: '30px Areal',
         fill: '#FFFFFF'

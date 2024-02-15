@@ -31,9 +31,9 @@ class Win extends Phaser.State {
 
   winnerText() {
     if (this.skin) {
-      return `Player: "${this.skin}" won! Press Enter to return to main menu.`
+      return `Le joueur: "${this.skin}" a gagné! Appuie sur entrée pour revenir au menu principal.`
     }
 
-    return 'Opponent left! Press Enter to return to main menu.'
+    return 'Un joueur est parti ! Entrée pour revenir au menu principal'
   }
 }

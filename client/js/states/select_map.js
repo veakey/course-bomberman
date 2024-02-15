@@ -15,7 +15,7 @@ class SelectMap extends Phaser.State {
       game: this.game,
       x: this.game.world.centerX,
       y: this.game.world.centerY - 215,
-      text: 'Select Map',
+      text: 'Choix carte',
       style: {
         font: '35px Areal',
         fill: '#9ec0ba',
