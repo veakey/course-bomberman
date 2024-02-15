@@ -22,7 +22,7 @@ class Info {
     delayIcon.addChild(this.delayText)
     this.game.add.existing(delayIcon);
 
-    this.deadText = this.game.add.text(this.game.world.centerX, this.game.world.height - 30, 'You died :(', this.redStyle);
+    this.deadText = this.game.add.text(this.game.world.centerX, this.game.world.height - 30, 'Dommage, tu as pris une bombe :(', this.redStyle);
     this.deadText.anchor.set(0.5);
     this.deadText.visible = false
   }

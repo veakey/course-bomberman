@@ -37,7 +37,7 @@ class Menu extends Phaser.State {
       outFrame: 0,
       downFrame: 2,
       upFrame: 0,
-      label: 'New Game',
+      label: 'Nouvelle partie',
       style: {
         font: '20px Areal',
         fill: '#000000'

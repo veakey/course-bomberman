@@ -41,7 +41,7 @@ class PendingGame extends Phaser.State {
       outFrame: 0,
       downFrame: 2,
       upFrame: 0,
-      label: 'Start Game',
+      label: 'Lancer',
       style: {
         font: '20px Areal',
         fill: '#000000'
@@ -61,7 +61,7 @@ class PendingGame extends Phaser.State {
       outFrame: 0,
       downFrame: 2,
       upFrame: 0,
-      label: 'Leave Game',
+      label: 'Annuler',
       style: {
         font: '20px Areal',
         fill: '#000000'

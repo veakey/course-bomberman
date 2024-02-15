@@ -9,6 +9,16 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3002;
 
+const corsSettings = {
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:3002',
+    'https://cyrbhd6crj.eu-west-3.awsapprunner.com/'
+  ], // Autorise uniquement cet origine
+  methods: ['GET'], // Méthodes HTTP autorisées
+  allowedHeaders: ['Content-Type', 'Access-Control-Allow-Origin'], // En-têtes autorisés dans les requêtes
+};
+
 app.use(express.static(path.join(__dirname, '..', 'client')));
 app.use(favicon(path.join(__dirname, '..', 'client', 'favicon.ico')));
 app.use(cors());
@@ -25,7 +35,7 @@ server.listen(PORT, function(){
 const Lobby    = require('./lobby');
 const Play     = require('./play');
 
-serverSocket = socketIO(server);
+serverSocket = socketIO(server, {cors: corsSettings});
 
 serverSocket.sockets.on('connection', function(client) {
   console.log('New player has connected: ' + client.id);
