@@ -1,6 +1,8 @@
 ## A Bomberman-style game with multiplayer option.
 
-Fork from https://github.com/DmytroVasin/bomber
+### References
+ - Fork from https://github.com/DmytroVasin/bomber
+ - Sprite generation https://sprite-generator-online.com
 
 ### Installation
 ```bash
