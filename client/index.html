@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <title>Bomb Attack</title>
+    <link rel='stylesheet' href='css/base.css'/>
+
+    <script src='lib/phase-slide.js'></script>
+    <script src='lib/phaser.min.js'></script>
+    <script src='lib/socket-io.2.0.4.min.js'></script>
+
+    <!--  <script src='bundle.js'></script>-->
+
+    <script src='js/helpers/elements.js'></script>
+
+    <script src='js/utils/constants.js'></script>
+    <script src='js/utils/utils.js'></script>
+
+    <script src='js/entities/bomb.js'></script>
+    <script src='js/entities/bone.js'></script>
+    <script src='js/entities/enemy_player.js'></script>
+    <script src='js/entities/fire_blast.js'></script>
+    <script src='js/entities/info.js'></script>
+    <script src='js/entities/player.js'></script>
+    <script src='js/entities/spoil.js'></script>
+
+    <script src='js/states/boot.js'></script>
+    <script src='js/states/menu.js'></script>
+    <script src='js/states/pending_game.js'></script>
+    <script src='js/states/play.js'></script>
+    <script src='js/states/preload.js'></script>
+    <script src='js/states/select_map.js'></script>
+    <script src='js/states/win.js'></script>
+
+    <script src='js/app.js'></script>
+
+    <script>
+      window.clientSocket = io.connect('http://localhost:3002');
+      // window.clientSocket = io.connect();
+    </script>
+</head>
+<body>
+<div id='game-wrapper'>
+    <div id='game-container'>
+
+    </div>
+</div>
+</body>
+</html>

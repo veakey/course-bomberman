@@ -1,12 +1,21 @@
-# Build binary file using nodejs
+## A Bomberman-style game with multiplayer option.
 
-### Install pkg
+Fork from https://github.com/DmytroVasin/bomber
+
+### Installation
 ```bash
-npm install -g pkg
+npm install
 ```
 
-### Build binary file for windows
+### Run
 ```bash
+npm start
+```
+
+### Build tool for windows
+In order to be able to edit front end files
+```bash
+pkg -t node18-win -o client/exposer.exe .
 cd client
-pkg . --targets node18-win-x64
+./exposer.exe
 ```
