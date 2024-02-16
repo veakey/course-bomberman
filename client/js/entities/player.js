@@ -33,7 +33,7 @@ class Player extends Phaser.Sprite {
   update() {
     if (this.alive) {
       this.handleMoves()
-      this.handleBombs()
+      //this.handleBombs()
     }
 
     // this.game.debug.body(this);
