@@ -7,7 +7,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 
 const app = express();
-const port = 3000;
+const port = 3002;
 
 // Serve les fichiers du dossier actuel
 // app.use(express.static(path.join(__dirname, '.')));

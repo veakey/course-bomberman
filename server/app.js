@@ -7,11 +7,13 @@ const app = express();
 const server = require('http').createServer(app);
 const path = require('path');
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3000;
 
 const corsSettings = {
   origin: [
+      // current server port
     'http://localhost:3000',
+      // exposer port
     'http://localhost:3002',
     'https://cyrbhd6crj.eu-west-3.awsapprunner.com/'
   ], // Autorise uniquement cet origine
