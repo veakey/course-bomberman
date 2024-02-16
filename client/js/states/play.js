@@ -1,12 +1,3 @@
-// import { findFrom, findAndDestroyFrom } from '../utils/utils';
-// import { TILESET, LAYER } from '../utils/constants';
-
-// import Player from '../entities/player';
-// import EnemyPlayer from '../entities/enemy_player';
-// import Bomb from '../entities/bomb';
-// import Spoil from '../entities/spoil';
-// import FireBlast from '../entities/fire_blast';
-// import Bone from '../entities/bone';
 
 class Play extends Phaser.State {
   init(game) {
@@ -115,14 +106,14 @@ class Play extends Phaser.State {
     // Render Blast:
     for (let cell of blastedCells) {
       this.blasts.add(new FireBlast(this.game, cell));
-    };
+    }
 
     // Destroy Tiles:
     for (let cell of blastedCells) {
       if (!cell.destroyed) { continue }
 
       this.map.putTile(this.blockLayer.layer.properties.empty, cell.col, cell.row, this.blockLayer);
-    };
+    }
 
     // Add Spoils:
     for (let cell of blastedCells) {
@@ -130,7 +121,7 @@ class Play extends Phaser.State {
       if (!cell.spoil) { continue }
 
       this.spoils.add(new Spoil(this.game, cell.spoil));
-    };
+    }
   }
 
   onSpoilWasPicked({ player_id, spoil_id, spoil_type }){

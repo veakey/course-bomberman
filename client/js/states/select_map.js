@@ -1,6 +1,3 @@
-// import { AVAILABLE_MAPS } from '../utils/constants';
-// import { Text, Button } from '../helpers/elements';
-
 class SelectMap extends Phaser.State {
 
   init() {

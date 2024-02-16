@@ -1,5 +1,3 @@
-// import { Text } from '../helpers/elements';
-
 class Win extends Phaser.State {
 
   init(winner_skin) {

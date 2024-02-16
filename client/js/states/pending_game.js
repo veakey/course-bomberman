@@ -1,5 +1,3 @@
-// import { Text, Button, TextButton, PlayerSlots } from '../helpers/elements';
-
 class PendingGame extends Phaser.State {
 
   init({ game_id }) {

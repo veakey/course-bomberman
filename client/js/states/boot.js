@@ -1,5 +1,3 @@
-// import { Text } from '../helpers/elements';
-
 class Boot extends Phaser.State {
 
   create() {

@@ -1,5 +1,3 @@
-// import { Text, TextButton, GameSlots } from '../helpers/elements';
-
 class Menu extends Phaser.State {
 
   init() {
@@ -59,7 +57,7 @@ class Menu extends Phaser.State {
     // NOTE: That is not optimal way to preview slots,
     //       we should implement AddSlotToGroup, RemoveSlotFromGroup
 
-    // I triying to care about readability, not about performance.
+    // Readabilty focus, not about performance.
     if (this.slotsWithGame) {
       this.slotsWithGame.destroy()
     }
