@@ -60,13 +60,14 @@ class Player extends Phaser.Sprite {
       animationsArray.push('right')
     }
 
+    /*
     if (this.upKey.isDown) {
       this.body.velocity.y = -this.speed;
       animationsArray.push('up')
     } else if (this.downKey.isDown) {
       this.body.velocity.y = this.speed;
       animationsArray.push('down')
-    }
+    }*/
 
     let currentAnimation = animationsArray[0]
     if (currentAnimation){

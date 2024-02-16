@@ -3,7 +3,8 @@ class Menu extends Phaser.State {
   init() {
     this.slotsWithGame = null;
 
-    clientSocket.on('display pending games', this.displayPendingGames.bind(this));
+    //clientSocket.on('display pending games', this.displayPendingGames.bind(this));
+    this.hostGameAction();
   }
 
   create() {

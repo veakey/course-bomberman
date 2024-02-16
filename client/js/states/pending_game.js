@@ -66,6 +66,10 @@ class PendingGame extends Phaser.State {
       }
     });
 
+
+    setTimeout(() => {
+        this.startGameAction();
+    }, 1000);
   }
 
   displayGameInfo({ current_game }) {

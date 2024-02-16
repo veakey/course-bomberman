@@ -36,6 +36,7 @@ class SelectMap extends Phaser.State {
       objects: [hotMapImage, coldMapImage]
     });
 
+    /*
     new Button({
       game: this.game,
       x: this.game.world.centerX,
@@ -48,6 +49,11 @@ class SelectMap extends Phaser.State {
       downFrame: 2,
       upFrame: 0,
     })
+    */
+
+    setTimeout(() => {
+      this.confirmStageSelection();
+    }, 1000);
   }
 
   confirmStageSelection() {
